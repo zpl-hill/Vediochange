@@ -1,0 +1,12 @@
+# Video Toolkit V1.0 — 运行依赖
+# 本机已安装 PySide6 6.12.0（Python 3.14），可直接使用 run.bat 启动。
+# 换机器时：双击 install.bat 一键安装 + 自检（推荐）
+#   或手动： py -3 -m pip install -r requirements.txt
+# ffmpeg.exe / ffprobe.exe 不是 Python 包，需单独放到 ffmpeg 目录或加入 PATH。
+PySide6>=6.10
+
+# 可选依赖（不装也能跑，程序会自动降级）：
+#   psutil     — 状态栏显示内存占用
+#   darkdetect — 跟随系统深浅色主题
+# 明确不需要：opencv-python / numpy / ffmpeg-python / reportlab
+# 所有视频处理与媒体信息读取都通过外部 ffmpeg.exe / ffprobe.exe 完成。

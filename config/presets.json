@@ -1,0 +1,240 @@
+{
+  "version": "1.1.0",
+  "updated": "2026-11-06",
+  "disclaimer": {
+    "zh_CN": "内置平台参数为公开资料整理的参考值，并非平台官方标准；各平台规范会调整，请以官方创作者后台的最新说明为准。所有预设均可自由编辑、复制和导入导出。",
+    "en_US": "Built-in platform values are public references, not official specifications. Platform requirements change over time - always check the official creator guidelines. Every preset is editable and can be exported or imported."
+  },
+  "defaults": {
+    "container": "mp4",
+    "codec_family": "h264",
+    "vcodec": "libx264",
+    "profile": "high",
+    "level": "",
+    "width": 0,
+    "height": 0,
+    "scale_mode": "fit",
+    "fps": 0,
+    "rate_mode": "bitrate",
+    "crf": 23,
+    "bitrate_kbps": 8000,
+    "maxrate_kbps": 0,
+    "bufsize_kbps": 0,
+    "preset": "medium",
+    "gop": 0,
+    "pix_fmt": "yuv420p",
+    "acodec": "aac",
+    "abitrate_kbps": 128,
+    "samplerate": 48000,
+    "channels": 2,
+    "faststart": true,
+    "two_pass": false,
+    "target_size_mb": 0,
+    "subtitle": {},
+    "watermark": {},
+    "hdr": {}
+  },
+  "presets": [
+    {
+      "id": "platform.douyin.1080p",
+      "category": "platform",
+      "name": { "zh_CN": "抖音 · 竖屏 1080P", "en_US": "Douyin · Vertical 1080p" },
+      "note": { "zh_CN": "9:16 竖屏，30fps，参考码率 8 Mbps。横屏素材默认模糊背景补边。", "en_US": "9:16 vertical, 30 fps, ~8 Mbps reference. Landscape sources get a blurred background." },
+      "params": { "width": 1080, "height": 1920, "scale_mode": "pad_blur", "fps": 30, "bitrate_kbps": 8000, "maxrate_kbps": 10000, "bufsize_kbps": 16000 }
+    },
+    {
+      "id": "platform.kuaishou.1080p",
+      "category": "platform",
+      "name": { "zh_CN": "快手 · 竖屏 1080P", "en_US": "Kuaishou · Vertical 1080p" },
+      "note": { "zh_CN": "9:16 竖屏，30fps，参考码率 8 Mbps。", "en_US": "9:16 vertical, 30 fps, ~8 Mbps reference." },
+      "params": { "width": 1080, "height": 1920, "scale_mode": "pad_blur", "fps": 30, "bitrate_kbps": 8000 }
+    },
+    {
+      "id": "platform.channels.1080p",
+      "category": "platform",
+      "name": { "zh_CN": "微信视频号 · 竖屏 1080P", "en_US": "WeChat Channels · Vertical 1080p" },
+      "note": { "zh_CN": "9:16 竖屏，30fps，参考码率 6 Mbps。", "en_US": "9:16 vertical, 30 fps, ~6 Mbps reference." },
+      "params": { "width": 1080, "height": 1920, "scale_mode": "pad_blur", "fps": 30, "bitrate_kbps": 6000 }
+    },
+    {
+      "id": "platform.xhs.3_4",
+      "category": "platform",
+      "name": { "zh_CN": "小红书 · 3:4 竖版", "en_US": "Xiaohongshu · 3:4 portrait" },
+      "note": { "zh_CN": "1080×1440，30fps，参考码率 8 Mbps。3:4 是小红书信息流常见画幅。", "en_US": "1080x1440, 30 fps, ~8 Mbps reference. Common feed aspect on Xiaohongshu." },
+      "params": { "width": 1080, "height": 1440, "scale_mode": "pad_blur", "fps": 30, "bitrate_kbps": 8000 }
+    },
+    {
+      "id": "platform.xhs.9_16",
+      "category": "platform",
+      "name": { "zh_CN": "小红书 · 9:16 全屏", "en_US": "Xiaohongshu · 9:16 full screen" },
+      "note": { "zh_CN": "1080×1920，30fps，参考码率 8 Mbps。", "en_US": "1080x1920, 30 fps, ~8 Mbps reference." },
+      "params": { "width": 1080, "height": 1920, "scale_mode": "pad_blur", "fps": 30, "bitrate_kbps": 8000 }
+    },
+    {
+      "id": "platform.bilibili.1080p",
+      "category": "platform",
+      "name": { "zh_CN": "哔哩哔哩 · 1080P", "en_US": "Bilibili · 1080p" },
+      "note": { "zh_CN": "16:9 横屏，30fps，参考码率 12 Mbps。平台会二次转码，适当留余量。", "en_US": "16:9 landscape, 30 fps, ~12 Mbps reference. The platform re-encodes, so keep some headroom." },
+      "params": { "width": 1920, "height": 1080, "scale_mode": "fit", "fps": 30, "bitrate_kbps": 12000, "maxrate_kbps": 16000, "bufsize_kbps": 24000 }
+    },
+    {
+      "id": "platform.bilibili.4k",
+      "category": "platform",
+      "name": { "zh_CN": "哔哩哔哩 · 4K", "en_US": "Bilibili · 4K" },
+      "note": { "zh_CN": "3840×2160，30fps，参考码率 35 Mbps，需大会员/高码率权限。", "en_US": "3840x2160, 30 fps, ~35 Mbps reference; high-bitrate upload permission may be required." },
+      "params": { "width": 3840, "height": 2160, "scale_mode": "fit", "fps": 30, "bitrate_kbps": 35000, "maxrate_kbps": 45000, "bufsize_kbps": 70000, "level": "5.1" }
+    },
+    {
+      "id": "platform.xigua.1080p",
+      "category": "platform",
+      "name": { "zh_CN": "西瓜视频 · 1080P", "en_US": "Xigua Video · 1080p" },
+      "note": { "zh_CN": "16:9 横屏，30fps，参考码率 10 Mbps。", "en_US": "16:9 landscape, 30 fps, ~10 Mbps reference." },
+      "params": { "width": 1920, "height": 1080, "scale_mode": "fit", "fps": 30, "bitrate_kbps": 10000 }
+    },
+    {
+      "id": "platform.youtube.1080p",
+      "category": "platform",
+      "name": { "zh_CN": "YouTube · 1080P", "en_US": "YouTube · 1080p" },
+      "note": { "zh_CN": "16:9 横屏，30fps，参考码率 15 Mbps；平台会二次转码。", "en_US": "16:9 landscape, 30 fps, ~15 Mbps reference; YouTube re-encodes uploads." },
+      "params": { "width": 1920, "height": 1080, "scale_mode": "fit", "fps": 30, "bitrate_kbps": 15000, "maxrate_kbps": 20000, "bufsize_kbps": 30000, "abitrate_kbps": 192 }
+    },
+    {
+      "id": "platform.youtube.4k",
+      "category": "platform",
+      "name": { "zh_CN": "YouTube · 4K", "en_US": "YouTube · 4K" },
+      "note": { "zh_CN": "3840×2160，30fps，参考码率 45 Mbps。", "en_US": "3840x2160, 30 fps, ~45 Mbps reference." },
+      "params": { "width": 3840, "height": 2160, "scale_mode": "fit", "fps": 30, "bitrate_kbps": 45000, "maxrate_kbps": 60000, "bufsize_kbps": 90000, "level": "5.1", "abitrate_kbps": 192 }
+    },
+    {
+      "id": "platform.wechat.send",
+      "category": "platform",
+      "name": { "zh_CN": "微信发送 · 小体积", "en_US": "WeChat send · small file" },
+      "note": { "zh_CN": "1280×720，24fps，约 2 Mbps，适合聊天窗口快速发送。", "en_US": "1280x720, 24 fps, ~2 Mbps for quick sharing in chat." },
+      "params": { "width": 1280, "height": 720, "scale_mode": "fit", "fps": 24, "bitrate_kbps": 2000, "abitrate_kbps": 96, "preset": "fast" }
+    },
+
+    {
+      "id": "device.iphone",
+      "category": "device",
+      "name": { "zh_CN": "iPhone / 手机通用", "en_US": "iPhone / smartphones" },
+      "note": { "zh_CN": "1920×1080，30fps，H.264 High@4.1，兼容性最好。", "en_US": "1920x1080, 30 fps, H.264 High@4.1 for maximum compatibility." },
+      "params": { "width": 1920, "height": 1080, "scale_mode": "fit", "fps": 30, "bitrate_kbps": 10000, "level": "4.1" }
+    },
+    {
+      "id": "device.ipad",
+      "category": "device",
+      "name": { "zh_CN": "iPad / 平板", "en_US": "iPad / tablets" },
+      "note": { "zh_CN": "1920×1080，30fps，参考码率 12 Mbps。", "en_US": "1920x1080, 30 fps, ~12 Mbps reference." },
+      "params": { "width": 1920, "height": 1080, "scale_mode": "fit", "fps": 30, "bitrate_kbps": 12000 }
+    },
+    {
+      "id": "device.android",
+      "category": "device",
+      "name": { "zh_CN": "Android 通用", "en_US": "Android generic" },
+      "note": { "zh_CN": "1920×1080，30fps，H.264 High，参考码率 8 Mbps。", "en_US": "1920x1080, 30 fps, H.264 High, ~8 Mbps reference." },
+      "params": { "width": 1920, "height": 1080, "scale_mode": "fit", "fps": 30, "bitrate_kbps": 8000 }
+    },
+    {
+      "id": "device.tv4k",
+      "category": "device",
+      "name": { "zh_CN": "4K 智能电视 / 盒子", "en_US": "4K TV / set-top box" },
+      "note": { "zh_CN": "3840×2160，30fps，H.264 Level 5.1，参考码率 40 Mbps。", "en_US": "3840x2160, 30 fps, H.264 Level 5.1, ~40 Mbps reference." },
+      "params": { "width": 3840, "height": 2160, "scale_mode": "fit", "fps": 30, "bitrate_kbps": 40000, "level": "5.1", "abitrate_kbps": 192 }
+    },
+    {
+      "id": "device.projector720",
+      "category": "device",
+      "name": { "zh_CN": "投影 / 老设备 720P", "en_US": "Projector / legacy 720p" },
+      "note": { "zh_CN": "1280×720，30fps，H.264 Main，参考码率 4 Mbps。", "en_US": "1280x720, 30 fps, H.264 Main, ~4 Mbps reference." },
+      "params": { "width": 1280, "height": 720, "scale_mode": "fit", "fps": 30, "bitrate_kbps": 4000, "profile": "main", "level": "3.1" }
+    },
+    {
+      "id": "device.archive",
+      "category": "device",
+      "name": { "zh_CN": "本地归档母版", "en_US": "Local archive master" },
+      "note": { "zh_CN": "保持源分辨率与帧率，CRF 18 高质量，适合长期保存。", "en_US": "Keeps source resolution and frame rate, CRF 18 for long-term archiving." },
+      "params": { "width": 0, "height": 0, "scale_mode": "none", "fps": 0, "rate_mode": "crf", "crf": 18, "preset": "slow", "abitrate_kbps": 192 }
+    },
+
+    {
+      "id": "quality.high",
+      "category": "quality",
+      "name": { "zh_CN": "高质量 · CRF 18", "en_US": "High quality · CRF 18" },
+      "note": { "zh_CN": "视觉近乎无损，体积较大。保持源分辨率。", "en_US": "Visually near-lossless, larger file. Keeps source resolution." },
+      "params": { "width": 0, "height": 0, "scale_mode": "none", "fps": 0, "rate_mode": "crf", "crf": 18, "preset": "slow" }
+    },
+    {
+      "id": "quality.standard",
+      "category": "quality",
+      "name": { "zh_CN": "标准 · CRF 23", "en_US": "Standard · CRF 23" },
+      "note": { "zh_CN": "画质与体积的常用平衡点。保持源分辨率。", "en_US": "Common quality/size balance. Keeps source resolution." },
+      "params": { "width": 0, "height": 0, "scale_mode": "none", "fps": 0, "rate_mode": "crf", "crf": 23, "preset": "medium" }
+    },
+    {
+      "id": "quality.compress",
+      "category": "quality",
+      "name": { "zh_CN": "压缩 · CRF 28", "en_US": "Compress · CRF 28" },
+      "note": { "zh_CN": "明显缩小体积，细节有一定损失。保持源分辨率。", "en_US": "Noticeably smaller with some detail loss. Keeps source resolution." },
+      "params": { "width": 0, "height": 0, "scale_mode": "none", "fps": 0, "rate_mode": "crf", "crf": 28, "preset": "medium" }
+    },
+    {
+      "id": "quality.extreme",
+      "category": "quality",
+      "name": { "zh_CN": "极限压缩 · 一键向导", "en_US": "Extreme compression · wizard" },
+      "note": { "zh_CN": "组合策略：分辨率降到 720P 以内 + slower 预设 + CRF 32 + 帧率上限 24 + 音频 64k + 2-pass 精确控体积。", "en_US": "Combined strategy: cap at 720p + slower preset + CRF 32 + 24 fps cap + 64k audio + 2-pass." },
+      "params": { "width": 0, "height": 0, "scale_mode": "fit", "fps": 0, "rate_mode": "crf", "crf": 32, "preset": "slower", "abitrate_kbps": 64, "two_pass": true },
+      "strategy": {
+        "max_width": 1280,
+        "max_height": 720,
+        "fps_cap": 24,
+        "preset": "slower",
+        "abitrate_kbps": 64,
+        "two_pass": true,
+        "use_hevc": false,
+        "scale_mode": "fit"
+      }
+    },
+    {
+      "id": "quality.target_size",
+      "category": "quality",
+      "name": { "zh_CN": "压到指定体积", "en_US": "Fit target size" },
+      "note": { "zh_CN": "按视频时长反算目标码率并用 2-pass 精确命中体积，适合邮件/网盘/平台大小限制。", "en_US": "Derives the bitrate from duration and hits the target size with 2-pass. Useful for upload limits." },
+      "params": { "width": 0, "height": 0, "scale_mode": "none", "fps": 0, "rate_mode": "target_size", "target_size_mb": 100, "two_pass": true }
+    },
+    {
+      "id": "quality.av1.high",
+      "category": "quality",
+      "name": { "zh_CN": "AV1 · 高画质", "en_US": "AV1 · High quality" },
+      "note": { "zh_CN": "AV1 CRF 18 等效质量档，保持源分辨率；CPU 编码较慢，硬件可用时会自动走 AV1 GPU 编码器。", "en_US": "AV1 constant-quality, keeps source resolution. CPU encoding is slow; a working AV1 GPU encoder is used when available." },
+      "params": { "codec_family": "av1", "rate_mode": "crf", "crf": 18, "preset": "medium", "scale_mode": "none", "container": "mkv", "width": 0, "height": 0, "fps": 0 }
+    },
+    {
+      "id": "quality.av1.small",
+      "category": "quality",
+      "name": { "zh_CN": "AV1 · 高压缩比", "en_US": "AV1 · High compression" },
+      "note": { "zh_CN": "AV1 相比 H.264 同画质可省 30% 左右体积；适合归档与慢速网络分发，编码耗时明显更长。", "en_US": "AV1 typically saves ~30% bitrate versus H.264 at equal quality; good for archiving, but much slower to encode." },
+      "params": { "codec_family": "av1", "container": "webm", "rate_mode": "crf", "crf": 30, "preset": "fast", "scale_mode": "none", "width": 0, "height": 0, "fps": 0, "acodec": "libopus", "abitrate_kbps": 96 }
+    },
+    {
+      "id": "device.av1.web",
+      "category": "device",
+      "name": { "zh_CN": "AV1 · 网页 / WebM 1080P", "en_US": "AV1 · Web / WebM 1080p" },
+      "note": { "zh_CN": "1920×1080、30fps、4 Mbps、Opus 音频，适合现代浏览器直接播放。", "en_US": "1920x1080, 30 fps, 4 Mbps with Opus audio for modern browsers." },
+      "params": { "codec_family": "av1", "container": "webm", "width": 1920, "height": 1080, "scale_mode": "fit", "fps": 30, "rate_mode": "bitrate", "bitrate_kbps": 4000, "acodec": "libopus", "abitrate_kbps": 128 }
+    },
+    {
+      "id": "device.hdr.keep",
+      "category": "device",
+      "name": { "zh_CN": "HDR10 · 保留动态范围", "en_US": "HDR10 · Keep dynamic range" },
+      "note": { "zh_CN": "HEVC 10-bit + BT.2020/PQ 色彩标记与 HDR10 元数据，供 HDR 电视 / 归档使用。", "en_US": "HEVC 10-bit with BT.2020/PQ tags and HDR10 metadata for HDR TVs and archiving." },
+      "params": { "codec_family": "hevc", "container": "mkv", "rate_mode": "crf", "crf": 18, "preset": "slow", "scale_mode": "none", "width": 0, "height": 0, "fps": 0, "pix_fmt": "yuv420p10le", "hdr": { "mode": "keep", "bit_depth": 10 } }
+    },
+    {
+      "id": "device.hdr.to_sdr",
+      "category": "device",
+      "name": { "zh_CN": "HDR → SDR 色调映射", "en_US": "HDR to SDR tone mapping" },
+      "note": { "zh_CN": "用 zscale + hable tonemap 把 HDR10/HLG 转到 BT.709 8-bit，避免普通屏幕上发灰发暗。", "en_US": "Converts HDR10/HLG to BT.709 8-bit with zscale + hable tonemap so SDR screens look right." },
+      "params": { "codec_family": "h264", "container": "mp4", "rate_mode": "crf", "crf": 21, "preset": "medium", "scale_mode": "none", "width": 0, "height": 0, "fps": 0, "pix_fmt": "yuv420p", "hdr": { "mode": "tonemap", "tonemap": "hable", "npl": 100 } }
+    }
+  ]
+}
