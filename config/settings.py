@@ -33,6 +33,8 @@ DEFAULTS: dict[str, Any] = {
     "playlist": [],
     "playlist_index": -1,
     "playlist_auto_next": True,
+    # 视频渲染后端：auto = 优先 GPU(OpenGL)，失败自动回退；cpu = 强制软件渲染
+    "render_backend": "auto",
 
     "geometry": "",
     "last_preset": "quality.standard",

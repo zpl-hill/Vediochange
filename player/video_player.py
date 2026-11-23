@@ -228,6 +228,51 @@ class VideoPlayer(QObject):
         _log.error("播放错误: %s", message)
         self.errorOccurred.emit(message or "播放失败")
 
+    # ---------- 画面控件热切换 ----------
+    @property
+    def surface(self):
+        return self._surface
+
+    def set_surface(self, video_widget) -> None:
+        """把视频输出改到另一个画面控件（GPU ↔ CPU 渲染热切换）。
+
+        QMediaPlayer 只往 setVideoSink() 指定的 sink 推帧，所以换控件必须换 sink。
+        换 sink 后当前这一帧不会自动重绘，暂停时会停在黑屏，因此要重新 seek 一次；
+        GPU 控件还要等 initializeGL 完成（首帧前后会有几十毫秒收不到帧），
+        所以再延迟补发一次刷新，双保险。
+        """
+        sink = getattr(video_widget, "sink", None)
+        if sink is None:
+            _log.warning("目标控件没有 videoSink，放弃切换画面控件")
+            return
+        position = int(self._player.position())
+        was_playing = bool(self._player.isPlaying())
+        rate = float(self._player.playbackRate() or 1.0)
+        self._player.setVideoSink(sink)
+        self._surface = video_widget
+        if rate > 0:
+            self._player.setPlaybackRate(rate)
+        self.refresh_frame()
+        QTimer.singleShot(260, self.refresh_frame)
+        _log.info(
+            "画面控件已切换为 %s（位置 %d ms，播放中=%s）",
+            type(video_widget).__name__, position, was_playing,
+        )
+
+    def refresh_frame(self) -> None:
+        """暂停状态下强制重新出一帧，用于换 sink / 换渲染控件后恢复画面。
+
+        setPosition(同一位置) 是空操作，不会触发重新解码，所以要往回退 1ms ——
+        对画面无感，但足以让 FFmpeg 后端重新解出一帧推到新 sink。
+        """
+        if self._player.isPlaying() or not self._surface_has_source():
+            return
+        position = int(self._player.position())
+        self._player.setPosition(max(0, position - 1))
+
+    def _surface_has_source(self) -> bool:
+        return bool(self._path) and self._player.mediaStatus() != QMediaPlayer.MediaStatus.NoMedia
+
     # ---------- 媒体控制 ----------
     def open(self, path: str) -> None:
         self._path = str(path)
